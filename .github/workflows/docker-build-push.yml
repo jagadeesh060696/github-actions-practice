@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker Image
-        run: docker build -t jagadeesh060696/github-actions-demo:latest .
+        run: docker build -t cbabureddy/github-actions-demo:latest .
 
       - name: Push Docker Image
-        run: docker push jagadeesh060696/github-actions-demo:latest
+        run: docker push cbabureddy/github-actions-demo:latest
