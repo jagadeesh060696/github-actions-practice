@@ -1,0 +1,32 @@
+name: Multi Job Workflow
+
+on: push
+
+jobs:
+
+  job1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step 1 - Print message
+        run: echo "This is Job 1"
+
+      - name: Step 2 - Show date
+        run: date
+
+      - name: Step 3 - Show current directory
+        run: pwd
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+
+    steps:
+      - name: Step 1 - Print message
+        run: echo "This is Job 2"
+
+      - name: Step 2 - Show system info
+        run: uname -a
+
+      - name: Step 3 - List files
+        run: ls -la
